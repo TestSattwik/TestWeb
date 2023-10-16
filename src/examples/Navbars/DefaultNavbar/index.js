@@ -24,6 +24,8 @@ import PropTypes from "prop-types";
 
 // @mui material components
 import { Container, Grid, Divider, Popper, Grow, Icon, TextField } from "@mui/material";
+import IconButton from '@mui/material/IconButton';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import MuiLink from "@mui/material/Link";
 
 // Material Kit 2 React components
@@ -38,7 +40,7 @@ import DefaultNavbarMobile from "examples/Navbars/DefaultNavbar/DefaultNavbarMob
 // Material Kit 2 React base styles
 import breakpoints from "assets/theme/base/breakpoints";
 
-function DefaultNavbar({ brand, routes, transparent, light, action, sticky, relative, center }) {
+function DefaultNavbar({ brand, routes, transparent, light, action, sticky, relative, center,onClick }) {
   const [dropdown, setDropdown] = useState("");
   const [dropdownEl, setDropdownEl] = useState("");
   const [dropdownName, setDropdownName] = useState("");
@@ -452,6 +454,11 @@ const handleSearchInputChange = (event) => {
       )}
     </Popper>
   );
+  const [cartItemCount, setCartItemCount] = useState(0); 
+
+  const addToCart = () => {
+    setCartItemCount(cartItemCount + 1);
+  };
 
   return (
     <Container sx={sticky ? { position: "sticky", top: 0, zIndex: 10 } : null}>
@@ -516,6 +523,11 @@ const handleSearchInputChange = (event) => {
 />
 
 </MKBox>
+<Link to="/cart">
+  <IconButton color="inherit" >
+    <ShoppingCartIcon />
+  </IconButton>
+</Link>
          
           <MKBox
             color="inherit"
@@ -539,6 +551,7 @@ const handleSearchInputChange = (event) => {
                   }
                   color={action.color ? action.color : "info"}
                   size="small"
+                  onClick={onClick}
                 >
                   {action.label}
                 </MKButton>
@@ -555,6 +568,8 @@ const handleSearchInputChange = (event) => {
                   }
                   color={action.color ? action.color : "info"}
                   size="small"
+                  onClick={onClick}
+
                 >
                   {action.label}
                 </MKButton>

@@ -31,6 +31,8 @@ import ExampleCard from "pages/Presentation/components/ExampleCard";
 // Data
 // import data from "pages/Presentation/sections/data/designBlocksData";
 
+
+
 import axios from 'axios';
 
 import mixture from "assets/images/mixture.jpg";
@@ -39,7 +41,7 @@ import jcb from "assets/images/jcb.jpg";
 import pestcontrol from "assets/images/pestcontrol.jpg";
 
 const api = axios.create({
-  baseURL: 'http://192.168.29.50:8000/', // Replace with your backend API URL
+  baseURL: 'http://192.168.123.92:8000/', // Replace with your backend API URL
   headers: {
     'Content-Type': 'application/json',
     // Add any other headers you need
@@ -58,19 +60,19 @@ function DesignBlocks() {
         // const serviceResponse = await api.get('/api/product/services/');
 
         const combinedData = [
-          { title: "Products", items: productResponse.data, description: "We source and provide only top-quality construction materials and products from trusted suppliers to ensure the durability and longevity of your projects.", },
+          { title: "Products", items: productResponse.data,route: "/sections/navigation/navbars", description: "We source and provide only top-quality construction materials and products from trusted suppliers to ensure the durability and longevity of your projects.", },
           { title: "Rentals", items:  [
             {
               image: `${pestcontrol}`,
               name: "Pest Control",
               // count: 4,
-              route: "/sections/navigation/navbars",
+         
             },
             {
               image: `${borewell}`,
               name: "Bore Well",
               // count: 2,
-              route: "/sections/navigation/nav-tabs",
+           
             },
           ],
          description: "We source and provide only top-quality construction materials and products from trusted suppliers to ensure the durability and longevity of your projects." },
@@ -113,11 +115,11 @@ function DesignBlocks() {
       </Grid>
       <Grid item xs={12} lg={9}>
         <Grid container spacing={3}>
-          {items.map(({ image, name, count, route, pro }) => (
+          {items.map(({ image, name, count, route, pro,id}) => (
             <Grid item xs={12} md={4} sx={{ mb: 2 }} key={name}>
-              <Link to={pro ? "/" : route}>
-                <ExampleCard image={image} name={name} count={count} pro={pro} />
-              </Link>
+              <Link to={`/product/${id}-${name}`}>
+    <ExampleCard image={image} name={name} count={count} pro={pro} />
+  </Link>
             </Grid>
           ))}
         </Grid>

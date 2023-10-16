@@ -17,7 +17,6 @@ Coded by www.creative-tim.com
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
-
 // Material Kit 2 React components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
@@ -45,24 +44,56 @@ import footerRoutes from "footer.routes";
 
 // Images
 import bgImage from "assets/images/bg.png";
-
+import React, { useState, useEffect } from 'react';
 
 
 function Presentation() {
-  
+  const [token, setToken] = useState(null);
+  const userId = localStorage.getItem('user_id');
+  console.log(userId)
+
+  useEffect(() => {
+    // Check if the token exists in local storage or any other authentication mechanism
+    const userToken = localStorage.getItem('access_token');
+    if (userToken) {
+      // If the token exists, set it in the state
+      setToken(userToken);
+    }
+  }, []);
+
+  const handleLogOut = () => {
+    // Handle the logic to log the user out, remove the token, etc.
+    localStorage.removeItem('access_token');
+    setToken(null);
+  };
+
+
+
   const routes = defineRoutes();
   return (
     <>
       <DefaultNavbar
         routes={routes}
-        action={{
-          type: "external",
-          route: "#",
-          label: "Log In",
-          color: "yellow",
-        }}
+        action={
+          token ? (
+            {
+              type: "internal",
+              route: '/presentation', // You can define a logout route
+              label: "Log Out",
+              color: "yellow",
+             
+            }
+          ) : (
+            {
+              type: "external",
+              route: '/auth',
+              label: "Log In",
+              color: "yellow",
+            }
+          )
+        }
         sticky
-        
+        onClick={handleLogOut}
       />
       <MKBox
         minHeight="75vh"

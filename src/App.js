@@ -25,6 +25,11 @@ import CssBaseline from "@mui/material/CssBaseline";
 // Material Kit 2 React themes
 import theme from "assets/theme";
 import Presentation from "layouts/pages/presentation";
+import ProductDetail from "./ProductDetail";
+import OrderPage from "./OrderPage";
+import Cart from "./Cart";
+import SignIn from "pages/LandingPages/SignIn";
+
 import defineRoutes from "routes";
 // Material Kit 2 React routes
 // import routes from "routes";
@@ -52,15 +57,23 @@ export default function App() {
     });
     
 const routes = defineRoutes();
-
+console.log("fhufjafadfds")
 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Routes>
         {getRoutes(routes)}
-        <Route path="/presentation" element={<Presentation />} />
-        <Route path="*" element={<Navigate to="/presentation" />} />
+        <Route path="/" element={<Presentation />} />
+        {/* <Route path="*" element={<Navigate to="/presentation" />} /> */}
+         <Route path="/cart"element={<Cart />}/>
+        <Route path="/product/:product_id" element={<ProductDetail />} />
+        <Route path="/product/order" element={<OrderPage />} />
+        <Route path="/auth" element={<SignIn />} />
+
+        
+
+
       </Routes>
     </ThemeProvider>
   );
