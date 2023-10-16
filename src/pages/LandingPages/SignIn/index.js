@@ -1,17 +1,4 @@
-/**
-=========================================================
-* Material Kit 2 React - v2.1.0
-=========================================================
 
-* Product Page: https://www.creative-tim.com/product/material-kit-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
 
 import { useState } from "react";
 
@@ -284,19 +271,13 @@ function SignInBasic() {
                 </MKTypography>
                 <Grid container spacing={3} justifyContent="center" sx={{ mt: 1, mb: 2 }}>
                   <Grid item xs={2}>
-                    <MKTypography component={MuiLink} href="#" variant="body1" color="white">
-                      <FacebookIcon color="inherit" />
-                    </MKTypography>
+                  
                   </Grid>
                   <Grid item xs={2}>
-                    <MKTypography component={MuiLink} href="#" variant="body1" color="white">
-                      <GitHubIcon color="inherit" />
-                    </MKTypography>
+                  
                   </Grid>
                   <Grid item xs={2}>
-                    <MKTypography component={MuiLink} href="#" variant="body1" color="white">
-                      <GoogleIcon color="inherit" />
-                    </MKTypography>
+                   
                   </Grid>
                 </Grid>
               </MKBox>
@@ -386,7 +367,7 @@ function SignInBasic() {
         </MKBox>
       ) : null}
       <MKBox mt={4} mb={1}>
-        <MKButton variant="gradient" color="info" fullWidth onClick={showOTPField ? handleOTPSubmit : handleSignUp}>
+        <MKButton variant="gradient" color="warning" fullWidth onClick={showOTPField ? handleOTPSubmit : handleSignUp}>
           {showOTPField ? 'Send OTP' : 'Sign Up'}
         </MKButton>
       </MKBox>
