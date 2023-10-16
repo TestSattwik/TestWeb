@@ -108,10 +108,10 @@ function SimpleFooter({ company, links, light }) {
 SimpleFooter.defaultProps = {
   company: { href: "https://www.testsattwik.in/", name: "Arl Tech" },
   links: [
-    { href: "#", name: "Creative Tim" },
+    { href: "#", name: "Arl-tech" },
     { href: "#", name: "About Us" },
     { href: "#", name: "Blog" },
-    { href: "#", name: "License" },
+    { href: "#", name: "Policy" },
   ],
   light: false,
 };
