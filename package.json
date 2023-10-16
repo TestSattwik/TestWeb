@@ -4,7 +4,7 @@
   "private": true,
   "author": "Arl-Tech",
   "description": "Arltech",
-  "homepage": "Arltech",
+  "homepage": "/",
   "dependencies": {
     "@emotion/cache": "11.10.7",
     "@emotion/react": "11.10.6",
