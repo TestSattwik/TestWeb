@@ -270,9 +270,9 @@ function SignInBasic() {
             <Card>
               <MKBox
                 variant="gradient"
-                bgColor="info"
+                bgColor="warning"
                 borderRadius="lg"
-                coloredShadow="info"
+                coloredShadow="warning"
                 mx={2}
                 mt={-3}
                 p={2}
@@ -331,7 +331,7 @@ function SignInBasic() {
         </MKBox>
       ) : null}
       <MKBox mt={4} mb={1}>
-        <MKButton variant="gradient" color="info" fullWidth  onClick={showOTPField1 ? handleOTPSubmitLogin : handleSignIn}>
+        <MKButton variant="gradient" color="warning" fullWidth  onClick={showOTPField1 ? handleOTPSubmitLogin : handleSignIn}>
           {showOTPField1 ? 'Send OTP' : 'Sign in'}
         </MKButton>
       </MKBox>
@@ -395,7 +395,7 @@ function SignInBasic() {
   )}
 </>
                   {/* <MKBox mt={4} mb={1}>
-                    <MKButton variant="gradient" color="info" fullWidth>
+                    <MKButton variant="gradient" color="warning" fullWidth>
                     {isSignInMode ? "Sign in" : "Sign up"}
                     </MKButton>
                   </MKBox> */}
@@ -406,7 +406,7 @@ function SignInBasic() {
                         //  component={Link}
                         //  to={isSignInMode ? "/authentication/sign-up" : "/authentication/sign-in"}
                         variant="button"
-                        color="info"
+                        color="warning"
                         fontWeight="medium"
                         textGradient
                       >
