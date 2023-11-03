@@ -28,15 +28,9 @@ import { useNavigate } from "react-router-dom";
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import defineRoutes from "routes";
 
-const api = axios.create({
-  baseURL: "http://192.168.123.92:8000/", // Replace with your backend API URL
-  headers: {
-    "Content-Type": "application/json",
-    // Add any other headers you need
-  },
-});
+import {api} from "API/Api"
 
-const baseUrl = "http://192.168.123.92:8000/";
+const baseUrl = "https://testsattwik.in/";
 function ProductDetail({ childName, childImage }) {
   const { product_id } = useParams();
   const [id, name] = product_id.split('-');
@@ -262,7 +256,7 @@ function ProductDetail({ childName, childImage }) {
           console.error("Error making POST request:", error);
         });
     };
-    const baseUrl = "http://192.168.123.25:8000/"
+    const baseUrl = "https://testsattwik.in/"
 
   
     return (

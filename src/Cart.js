@@ -5,13 +5,7 @@ import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import defineRoutes from "routes";
 
 
-const api = axios.create({
-    baseURL: 'http://192.168.29.10:8000/', // Replace with your backend API URL
-    headers: {
-      'Content-Type': 'application/json',
-      // Add any other headers you need
-    },
-  });
+import {api} from "API/Api"
   
 
 const Cart = memo(() => {

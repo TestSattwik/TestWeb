@@ -4,11 +4,11 @@ import { Card, CardContent, CardMedia, Typography } from '@mui/material';
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import defineRoutes from "routes";
 import { Button, Dialog, DialogTitle, DialogContent, DialogActions, TextField,Grid,Box,Alert } from '@mui/material';
-
+import {api} from "API/Api"
 import axios from 'axios';
 
  
-const baseUrl = "http://192.168.29.10:8000/"
+const baseUrl = "https://testsattwik.in/"
 const OrderPage = () => {
     const [token, setToken] = useState(null);
     const routes = defineRoutes();
@@ -31,13 +31,6 @@ const OrderPage = () => {
   const [open, setOpen] = useState(false);
  
 console.log("fbbn",userId,authToken)
-  const api = axios.create({
-    baseURL: 'http://192.168.29.10:8000/', // Replace with your backend API URL
-    headers: {
-      'Content-Type': 'application/json',
-      // Add any other headers you need
-    },
-  });
  
   const handleLogOut = () => {
     // Handle the logic to log the user out, remove the token, etc.
