@@ -31,31 +31,16 @@ import ProgressBars from "layouts/sections/elements/progress-bars";
 import Toggles from "layouts/sections/elements/toggles";
 import Typography from "layouts/sections/elements/typography";
 import ProductDetail from "./ProductDetail";
-
 import React,{useState,useEffect} from "react"
 
 
-import axios from 'axios';
-
-
-
-const api = axios.create({
-  baseURL: 'http://192.168.123.92:8000/', // Replace with your backend API URL
-  headers: {
-    'Content-Type': 'application/json',
-    // Add any other headers you need
-  },
-});
-
-
+import {api} from "API/Api"
 
 
 export default function defineRoutes() {
   const [data, setData] = useState([]);
   const [productRoutes, setProductRoutes] = useState([]);
   const [loading, setLoading] = useState(true);
-
-
   
   const fetchData = async () => {
     try {
