@@ -41,7 +41,7 @@ import jcb from "assets/images/jcb.jpg";
 import pestcontrol from "assets/images/pestcontrol.jpg";
 
 const api = axios.create({
-  baseURL: 'http://192.168.123.92:8000/', // Replace with your backend API URL
+  baseURL: 'https://testsattwik.in/', // Replace with your backend API URL
   headers: {
     'Content-Type': 'application/json',
     // Add any other headers you need
