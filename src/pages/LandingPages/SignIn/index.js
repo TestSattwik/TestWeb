@@ -144,7 +144,7 @@ function SignInBasic() {
 
       if (response.data.detail === 'user verified') {
         // User is verified, navigate to the home page
-        navigate("/Home")
+        navigate("/")
       } else {
         alert('OTP verification failed');
       }
