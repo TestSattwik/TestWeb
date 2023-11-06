@@ -37,7 +37,7 @@ import axios from 'axios';
 
 
 const api = axios.create({
-  baseURL: 'http://192.168.29.10:8000/', // Replace with your backend API URL
+  baseURL: 'https://testsattwik.in/', // Replace with your backend API URL
   headers: {
     'Content-Type': 'application/json',
     // Add any other headers you need
